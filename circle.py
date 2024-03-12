@@ -28,7 +28,7 @@ class Circle:
         >>> c1 = Circle(3)
         >>> c2 = c1.add_area(Circle(4))
         >>> c2.radius
-        5
+        5.0
         """
         r1 = self.get_radius()
         r2 = circle.get_radius()
