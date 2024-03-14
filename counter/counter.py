@@ -11,9 +11,13 @@
 
 
 class Counter:
+    _instance = None
 
-    def __init__(self):
-        self.__count = 0
+    def __new__(cls, *args, **kwargs):
+        if cls._instance is None:
+            cls._instance = super().__new__(cls)
+            cls._instance.__count = 0
+        return cls._instance
 
     def __str__(self):
         return f"{self.__count}"
